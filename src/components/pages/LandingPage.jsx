@@ -3,7 +3,7 @@ import React from 'react';
 const LandingPage = () => {
     return (
         <div>
-            <p>afdkjg</p>
+            <p>afdkjgg</p>
         </div>
     );
 };
