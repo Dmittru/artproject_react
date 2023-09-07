@@ -4,14 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b5c3e5a-dc9d-4739-8630-3a4437148c62" name="Changes" comment="">
+    <list default="true" id="9b5c3e5a-dc9d-4739-8630-3a4437148c62" name="Changes" comment="koncert kishlaka tut? (MEGA UPDATE)">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/Modals/ModalBuyer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Modals/ModalBuyer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/UI/NavHeader/NavHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/NavHeader/NavHeader.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/LandingPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/LandingPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/styles/NavHeader.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/styles/NavHeader.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/CoursesPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/CoursesPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Page404.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Page404.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/ProjectsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/ProjectsPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/getCourses.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/getCourses.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,12 +66,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1693373325780</updated>
-      <workItem from="1693373328218" duration="84968000" />
+      <workItem from="1693373328218" duration="95550000" />
     </task>
+    <task id="LOCAL-00001" summary="koncert kishlaka tut? (MEGA UPDATE)">
+      <created>1693945326887</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1693945326887</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="koncert kishlaka tut? (MEGA UPDATE)" />
+    <option name="LAST_COMMIT_MESSAGE" value="koncert kishlaka tut? (MEGA UPDATE)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

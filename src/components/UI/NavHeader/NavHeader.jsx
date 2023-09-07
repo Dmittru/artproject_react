@@ -113,7 +113,7 @@ const NavHeader = () => {
                     </Dialog.Panel>
                 </Dialog>
             </header>
-
+        {/*AFTER CLICK IN MOBILE ADD CLOSE MENU AND MAY ADD FUNC AUTOMIZER WHEN CLICK ON LINK IN MENU*/}
 
         </>
     );

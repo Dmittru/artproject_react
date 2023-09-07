@@ -2,12 +2,17 @@ import React, {useEffect, useState} from 'react';
 import {CheckIcon} from '@heroicons/react/20/solid'
 import {getCourses} from "../../utils/getCourses";
 import ModalBuyer from "../UI/Modals/ModalBuyer";
+import Badges from "../UI/Badges/Badges";
+import {Transition} from "@headlessui/react";
 
 
 const CoursesPage = () => {
     const [courses, setCourses] = useState([])
     const [modalInfo, setModalInfo] = useState({})
     const [showModal, setShowModal] = useState(false)
+    const [anim, setAnim] = useState(false)
+
+    useEffect(()=>setAnim(true),[])
 
     const handleModal = (modalContent) => {
         setModalInfo(modalContent)
@@ -28,13 +33,24 @@ const CoursesPage = () => {
             <div className="bg-white py-24 sm:py-32">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     <div className="mx-auto max-w-2xl sm:text-center">
+                        {!anim && <div className='py-20'/> }
+                        <Transition
+                            show={anim}
+                            enter= 'transform transition ease-in-out duration-500 sm:duration-700'
+                            enterFrom= '-translate-y-8 opacity-0'
+                            enterTo='translate-y-0 opacity-1'
+                            leave='transform transition ease-in-out duration-500 sm:duration-700'
+                            leaveFrom= 'translate-y-0 opacity-1'
+                            leaveTo= '-translate-y-8 opacity-0'
+                        >
                         <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-center">Курсы по
                             обучению</h2>
                         <p className="mt-6 text-lg leading-8 text-gray-600 text-center">
                             Каждый из пройденных курсов включает в себя от 8 до 24 часов занятий, профессиональное
                             курирование преподавателя, а также аккредитованный сертификат по окончанию прохождения.
+                            Ознакомьтесь с каждым из них!
                         </p>
-
+                        </Transition>
                     </div>
                     <div className="mt-10 flex items-center">
                         <div className="h-px flex-auto bg-gray-300"/>
@@ -48,14 +64,7 @@ const CoursesPage = () => {
                                 <div className="p-8 sm:p-10 lg:flex-auto">
                                     <h3 className="text-2xl font-bold tracking-tight text-gray-900">
                                         {card.discoverInfo.title}
-                                        {card.miniLabels && card.miniLabels.map((label, key) => {
-                                            return (
-                                                <span key={key}
-                                                      className={`${label.color} text-base shadow-md rounded text-white p-1 ml-2`}>
-                                            {label.labelTitle}
-                                        </span>
-                                            )
-                                        })}
+                                        <Badges badges={card.discoverInfo.badges}/>
                                     </h3>
                                     <p className="mt-6 text-base leading-7 text-gray-600">
                                         {card.description}
