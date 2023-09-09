@@ -15,6 +15,13 @@ const NavHeader = () => {
         setLoginHide(prevState => !prevState)
     }
 
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
+    };
+
     const navigation = [
         {name: 'Главная', href: '/'},
         {name: 'Галерея', href: '/gallery'},
@@ -31,6 +38,7 @@ const NavHeader = () => {
                         <div className="hidden lg:flex lg:gap-x-12">
                             {navigation.map((item,key) => (
                                 <Link key={key}
+                                      onClick={()=>scrollToTop()}
                                       to={item.href}
                                       className="text-sm font-semibold leading-6 text-gray-900">
                                     {item.name}
