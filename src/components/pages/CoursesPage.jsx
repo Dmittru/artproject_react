@@ -5,22 +5,21 @@ import ModalBuyer from "../UI/Modals/ModalBuyer";
 import Badges from "../UI/Badges/Badges";
 import {Transition} from "@headlessui/react";
 import {useLocation} from "react-router-dom";
+import BackImage from "../UI/BackImage/BackImage";
+import Headler from "../UI/Headler/Headler";
 
 
 const CoursesPage = () => {
     const [courses, setCourses] = useState([])
     const [modalInfo, setModalInfo] = useState({})
     const [showModal, setShowModal] = useState(false)
-    const [anim, setAnim] = useState(false)
 
     const location = useLocation();
     const queryParams = new URLSearchParams(location.search);
 
-    useEffect(()=>setAnim(true),[])
-
-    useEffect(()=>{
+    useEffect(() => {
         scrollToSection(queryParams.get('jump'))
-    },[courses])
+    }, [courses])
 
     const handleModal = (modalContent) => {
         setModalInfo(modalContent)
@@ -30,7 +29,7 @@ const CoursesPage = () => {
     const scrollToSection = (id) => {
         const element = document.getElementById(id);
         if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
+            element.scrollIntoView({behavior: 'smooth'});
         }
     };
 
@@ -44,50 +43,32 @@ const CoursesPage = () => {
 
     return (
         <>
-            <ModalBuyer description={modalInfo} trigger={showModal} onHide={()=>setShowModal(false)}/>
-            <div className="bg-white py-24 sm:py-32 relative">
-                <div
-                    className="absolute inset-x-0 top-0 z-0 flex transform-gpu overflow-hidden pt-32 opacity-25 blur-3xl sm:pt-40 xl:justify-end"
-                    aria-hidden="true"
+            <ModalBuyer description={modalInfo} trigger={showModal} onHide={() => setShowModal(false)}/>
+            <div className="bg-indigo-950 py-24 sm:py-32 relative">
+                <BackImage
+                    image='https://cdn.discordapp.com/attachments/1150445325451006104/1150756998783180910/01Rstbc8dUJ3qbK-ypDsm.jpg'/>
+                <div className="relative mx-auto max-w-7xl px-6 lg:px-8 z-10"
+                     style={{zIndex: 1}}
                 >
-                    <div
-                        className="ml-[-22rem] aspect-[1313/771] w-[82.0625rem] flex-none origin-top-right rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] xl:ml-0 xl:mr-[calc(50%-12rem)]"
-                        style={{
-                            clipPath:
-                                'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-                        }}
-                    />
-                </div>
-                <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                    <div className="mx-auto max-w-2xl sm:text-center">
-                        {!anim && <div className='py-20'/> }
-                        <Transition
-                            show={anim}
-                            enter= 'transform transition ease-in-out duration-500 sm:duration-700'
-                            enterFrom= '-translate-y-8 opacity-0'
-                            enterTo='translate-y-0 opacity-1'
-                            leave='transform transition ease-in-out duration-500 sm:duration-700'
-                            leaveFrom= 'translate-y-0 opacity-1'
-                            leaveTo= '-translate-y-8 opacity-0'
-                        >
-                        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-center">Курсы по
-                            обучению</h2>
-                        <p className="mt-6 text-lg leading-8 text-gray-600 text-center">
-                            Каждый из пройденных курсов включает в себя от 8 до 24 часов занятий, профессиональное
+                    <Headler
+                        title='Курсы по обучению'
+                        description='Каждый из пройденных курсов включает в себя от 8 до 24 часов занятий, профессиональное
                             курирование преподавателя, а также аккредитованный сертификат по окончанию прохождения.
-                            Ознакомьтесь с каждым из них!
-                        </p>
-                        </Transition>
-                    </div>
+                            Ознакомьтесь с каждым из них!'
+                        opacityVal='.5'
+                    />
                     <div className="mt-10 flex items-center">
-                        <div className="h-px flex-auto bg-gray-300"/>
+                        <div className="h-px flex-auto bg-gray-50/75"/>
                     </div>
                     {courses.map((course, key) => {
                         return (
                             <div
                                 key={key}
                                 id={course.id}
-                                className={`shadow-2xl mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none flex-col ${(key + 1) % 2 === 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}
+                                className={`bg-white/90 shadow-2xl mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none flex-col ${(key + 1) % 2 === 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}
+                                style={{
+                                    background: 'linear-gradient(to bottom, rgba(229,231,235,.9) 0%, rgba(255,255,255,.9) 20%)',
+                                }}
                             >
                                 <div className="p-8 sm:p-10 lg:flex-auto">
                                     <h3 className="text-2xl font-bold tracking-tight text-gray-900">
@@ -99,7 +80,7 @@ const CoursesPage = () => {
                                     </p>
                                     <button
                                         className="text-base font-semibold tracking-tight text-white p-1 rounded bg-indigo-600 text-center mt-6"
-                                        onClick={()=>{
+                                        onClick={() => {
                                             handleModal(course.discoverInfo)
                                         }}
                                     >
@@ -148,7 +129,8 @@ const CoursesPage = () => {
                                                 <span className="text-5xl font-bold tracking-tight text-gray-900">
                                                     {course.discoverInfo.price['ru'][0]}
                                                 </span>
-                                                <span className="text-sm font-semibold leading-6 tracking-wide text-gray-600">
+                                                <span
+                                                    className="text-sm font-semibold leading-6 tracking-wide text-gray-600">
                                                     {course.discoverInfo.price['ru'][1]}
                                                 </span>
                                             </p>

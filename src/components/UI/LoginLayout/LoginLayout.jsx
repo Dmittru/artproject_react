@@ -1,15 +1,15 @@
-import React, {lazy, Suspense, useEffect, useState} from 'react';
-import icon from '../NavHeader/icons8-triangle-64.png';
+import React, {useEffect, useState} from 'react';
+import icon from '../NavHeader/icons8-dailyart-50.png';
 import LoginForm from "./ContentForms/LoginForm";
 import ErrForm from "./ContentForms/ErrForm";
-import Loader from "../Loader/Loader";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faXmark} from "@fortawesome/free-solid-svg-icons";
 import {Transition} from "@headlessui/react";
+import SuccessAnswerForm from "./ContentForms/SuccessAnswerForm";
+import ResetForm from "./ContentForms/ResetForm";
+import RegisterForm from "./ContentForms/RegisterForm";
+import Carousel from "../Carousel/Carousel";
 
-const RegisterForm = lazy(() => import('./ContentForms/RegisterForm'));
-const ResetForm = lazy(() => import('./ContentForms/ResetForm'));
-const SuccessAnswerForm = lazy(() => import('./ContentForms/SuccessAnswerForm'));
 
 
 const LoginLayout = ({onHide}) => {
@@ -18,7 +18,19 @@ const LoginLayout = ({onHide}) => {
     const [showFormType, setShowFormType] = useState('Вход в учётную запись');
     const [isOpen, setIsOpen] = useState(false);
     // BROKEN DESIGN FOR PHONES
-    const imageright = 'https://images.unsplash.com/photo-1496917756835-20cb06e75b4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1908&q=80'
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+    const imagesBg = [
+        'https://cdn.discordapp.com/attachments/1150445325451006104/1151087664100016220/NEWpainting-gallery-look-on-the-wall-with-pictures-294312587.jpg',
+        'https://cdn.discordapp.com/attachments/1150445325451006104/1151087663756099666/NEW.jpg',
+        'https://cdn.discordapp.com/attachments/1150445325451006104/1151087663517012080/NEWjgnldlhjda.jpg',
+        'https://cdn.discordapp.com/attachments/1150445325451006104/1151087663219212288/NEWlayered-paper-of-wave-aesthetic-epic-detail-dreamy-blue-color-starry-night-839239316.jpg',
+    ]
+    shuffleArray(imagesBg);
 
     useEffect(() => {
         document.body.style.overflow = 'hidden';
@@ -64,7 +76,7 @@ const LoginLayout = ({onHide}) => {
     return (
         <Transition
             show={isOpen}
-            enter={'ease-out duration-150'}
+            enter={'ease-out duration-200'}
             enterFrom={'opacity-0'}
             enterTo={'opacity-100'}
             leave={'ease-in duration-200'}
@@ -133,12 +145,9 @@ const LoginLayout = ({onHide}) => {
                             </div> : <></>}
                         </div>
                     </div>
-                    <div className="relative hidden w-0 flex-1 lg:block">
-                        <img
-                            className="absolute inset-0 h-full w-full object-cover"
-                            src={imageright}
-                            alt=""
-                        />
+                    <div className="relative hidden w-0 h-0 lg:h-screen flex-1 lg:block">
+                        <Carousel images={imagesBg} duration={10} />
+                    {/*    LG SCREEN STARTS BAD*/}
                     </div>
                 </div>
             </div>

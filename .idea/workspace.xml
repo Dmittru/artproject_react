@@ -4,18 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b5c3e5a-dc9d-4739-8630-3a4437148c62" name="Changes" comment="NEXT update">
+    <list default="true" id="9b5c3e5a-dc9d-4739-8630-3a4437148c62" name="Changes" comment="v0.1.5 landing update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/Carousel/Carousel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Carousel/Carousel.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/Footer/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Footer/Footer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/UI/LoginLayout/LoginLayout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/LoginLayout/LoginLayout.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/Modals/ModalBuyer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Modals/ModalBuyer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/UI/NavHeader/NavHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/NavHeader/NavHeader.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/NavHeader/icons8-triangle-64.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/ProjectCards/ProjectCards.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/ProjectCards/ProjectCards.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/ScrollToTop/ScrollToTop.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/ScrollToTop/ScrollToTop.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/CoursesPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/CoursesPage.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/GalleryPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/GalleryPage.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/ProjectsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/ProjectsPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/getCourses.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/getCourses.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/getCards.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/getCards.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +70,10 @@
       <updated>1693373325780</updated>
       <workItem from="1693373328218" duration="107470000" />
       <workItem from="1694162811557" duration="12035000" />
+      <workItem from="1694253440073" duration="61000" />
+      <workItem from="1694353976286" duration="648000" />
+      <workItem from="1694428948260" duration="5788000" />
+      <workItem from="1694438280363" duration="21654000" />
     </task>
     <task id="LOCAL-00001" summary="koncert kishlaka tut? (MEGA UPDATE)">
       <created>1693945326887</created>
@@ -84,7 +89,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694083816257</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="v0.1.5 landing update">
+      <created>1694253483812</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1694253483812</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -93,7 +105,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="koncert kishlaka tut? (MEGA UPDATE)" />
     <MESSAGE value="NEXT update" />
-    <option name="LAST_COMMIT_MESSAGE" value="NEXT update" />
+    <MESSAGE value="v0.1.5 landing update" />
+    <option name="LAST_COMMIT_MESSAGE" value="v0.1.5 landing update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

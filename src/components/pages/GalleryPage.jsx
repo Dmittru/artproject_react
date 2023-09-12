@@ -2,13 +2,13 @@ import React, {useEffect, useState} from 'react';
 import PhotoGrid from "../UI/PhotoGrid/PhotoGrid";
 import {getGallery} from "../../utils/getGallery";
 import {Link} from "react-router-dom";
-import {Transition} from "@headlessui/react";
+import Headler from "../UI/Headler/Headler";
+import BackImage from "../UI/BackImage/BackImage";
 
 const GalleryPage = () => {
     const [gallery, setGallery] = useState([])
     const [fetchCalled, setFetchCalled] = useState(1)
     const [allFetched, setAllFetched] = useState(false);
-    const [anim, setAnim] = useState(false)
 
     const fetchData = async (calls = fetchCalled) => {
         setFetchCalled(prevState => prevState + 1)
@@ -28,31 +28,24 @@ const GalleryPage = () => {
         }
     };
 
-    useEffect(()=>setAnim(true),[])
-
     useEffect(() => {
         fetchData();
     }, []);
 
 
     return (
-        <div className="bg-white py-24 sm:py-32 px-4 sm:px-32">
-            {!anim && <div className='py-20'/> }
-            <Transition
-                show={anim}
-                enter= 'transform transition ease-in-out duration-500 sm:duration-700'
-                enterFrom= '-translate-y-8 opacity-0'
-                enterTo='translate-y-0 opacity-1'
-                leave='transform transition ease-in-out duration-500 sm:duration-700'
-                leaveFrom= 'translate-y-0 opacity-1'
-                leaveTo= '-translate-y-8 opacity-0'
+        <div className="bg-amber-100/30 py-24 relative sm:py-32 px-4 sm:px-32">
+            <BackImage image='https://cdn.discordapp.com/attachments/1150445325451006104/1150891506874458234/NEWQQQ.jpg'/>
+            <Headler
+                title='Галерея учеников арт-студии'
+                description='В данном разделе вы можете ознакомиться с работами и
+                    узнать уникальные детали, которым обучаются'
+                opacityVal = '.25'
+            />
+            <div className="mt-10 mb-14 flex items-center relative"
+                 style={{zIndex: 1}}
             >
-                <h1 className="text-4xl font-bold mb-4 text-center ">Галерея учеников арт-студии</h1>
-                <p className="text-base mb-4 text-center text-gray-500">В данном разделе вы можете ознакомиться с работами и
-                    узнать уникальные детали, которым обучаются</p>
-            </Transition>
-            <div className="my-12 mb-16 flex items-center">
-                <div className="h-px flex-auto bg-gray-300"/>
+                <div className="h-px flex-auto bg-gray-50/75 rounded"/>
             </div>
             <PhotoGrid photos={gallery}/>
             <div className='w-full flex justify-center items-center pt-10 px-20'>

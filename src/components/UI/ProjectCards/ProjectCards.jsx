@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import Carousel from "../Carousel/Carousel";
+import Badges from "../Badges/Badges";
 
 const ProjectCards = ({cards}) => {
         const scrollToTop = () => {
@@ -13,17 +14,19 @@ const ProjectCards = ({cards}) => {
         return (
             <>
                 {cards.length > 0 ? cards.map((card, key) => {
+                        const gradientStyle = {
+                            backgroundImage: `linear-gradient(to right, ${card.gradient[0]}, ${card.gradient[1]})`,
+                            clipPath:
+                                'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+                        };
                         return (
                             <div className="relative z-10 mt-32 bg-gray-900 pb-20 sm:mt-32 sm:pb-24 xl:pb-0" key={card.id}>
                                 <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
                                     <div
                                         className="absolute left-[calc(50%-19rem)] top-[calc(50%-36rem)] transform-gpu blur-3xl">
                                         <div
-                                            className="aspect-[1097/1023] w-[68.5625rem] bg-gradient-to-r from-[#ff4694] to-[#776fff] opacity-25"
-                                            style={{
-                                                clipPath:
-                                                    'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-                                            }}
+                                            className={`aspect-[1097/1023] w-[68.5625rem] opacity-25`}
+                                            style={gradientStyle}
                                         />
                                     </div>
                                 </div>
@@ -34,12 +37,14 @@ const ProjectCards = ({cards}) => {
                                         <div className="relative h-full md:-mx-8 xl:mx-0 ">
                                             <div
                                                 className='absolute inset-0 h-full w-full rounded-2xl bg-gray-800 object-center shadow-2xl overflow-hidden'>
-                                                <Carousel images={card.photos}/>
+                                                <Carousel images={card.photos} duration={3}/>
                                             </div>
                                         </div>
                                     </div>
                                     <div className="w-full max-w-2xl xl:max-w-none xl:flex-auto xl:px-16 xl:py-24">
-                                        <h1 className='text-white font-semibold text-4xl leading-9 mt-16 xl:mt-0'>{card.title}</h1>
+                                        <h1 className='text-white font-semibold text-4xl leading-9 mt-16 xl:mt-0 flex flex-wrap'>
+                                            {card.title} <span className='mt-2 md:mt-0 flex'><Badges badges={card.badges}/></span>
+                                        </h1>
                                         <figure className="relative isolate pt-6 sm:pt-12">
                                             <blockquote
                                                 className="text-xl font-semibold leading-8 text-white sm:text-2xl sm:leading-9">

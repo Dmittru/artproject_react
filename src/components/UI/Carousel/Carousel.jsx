@@ -4,15 +4,16 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-const Carousel = ({ images }) => {
+const Carousel = ({ images, duration }) => {
     const settings = {
-        dots: true,
+        dots: false,
+        arrows:false,
         infinite: true,
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: (3 + Math.floor(Math.random()*4)) * 1000,
+        autoplaySpeed: (duration + Math.floor(Math.random()*4)) * 1000,
     };
 
     return (
@@ -22,7 +23,7 @@ const Carousel = ({ images }) => {
                     <img
                         src={image}
                         alt={`Slide ${index + 1}`}
-                        className="w-full min-h-[650px] object-cover"
+                        className="w-full min-h-[655px] lg:min-h-[855px] object-cover"
                         // ADD LG
                     />
                 </div>
